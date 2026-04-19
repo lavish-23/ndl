@@ -1,0 +1,22 @@
+kathara wipe->y
+
+kathara vstart -n pc1 --eth 0:A
+kathara vstart -n pc1 --eth 0:B
+kathara vstart -n r1 --eth 0:A 1:B
+
+pc1
+ifconfig eth0 192.128.0.2
+route add default gw 192.128.0.1
+ping 192.168.1.1
+arp
+
+pc2
+ifconfig eth0 192.128.1.2
+route add default gw 192.128.1.1
+ping 192.128.1.2
+ifconfig
+
+r1
+ifconfig eth0 192.128.0.1
+ifconfig eth1 192.128.1.1
+ifconfig

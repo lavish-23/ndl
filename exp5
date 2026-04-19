@@ -1,0 +1,15 @@
+open 3 terminals
+
+1st terminal
+sudo tcpdump --interface any
+sudo tcpdump -i any -c5 -nn
+sudo tcpdump -i lo -nnn port 12345
+//sudo tcpdump any -c5 -nn host 192.168.25.68
+//sudo tcpdump any -c5 -nn src 192.168.25.68
+
+2nd terminal
+nc -lk port 12345
+
+3rd terminal
+telnet 127.0.0.1 12345
+then go to 1st terminal and run last command

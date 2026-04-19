@@ -1,0 +1,24 @@
+kathara vstart -n pc1 --eth 0:A 
+kathara vstart -n pc2 --eth 0:A
+kathara vstart -n pc3 --eth 0:B
+kathara vstart -n pc4 --eth 0:B
+
+pc1
+ifconfig eth0 192.168.25.1/25
+route add default gw 192.168.25.125
+ifconfig
+ping 192.168.25.126
+ping 192.168.25.129
+arp
+
+pc2
+ifconfig eth0 192.168.25.126/25
+route add default gw 192.168.25.125
+
+pc3
+ifconfig eth0 192.128.25.129/25
+route add default gw 192.128.25.253
+
+pc4
+ifconfig eth0 192.168.25.254/25
+route add default gw 192.128.25.253
