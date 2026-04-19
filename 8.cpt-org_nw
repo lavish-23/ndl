@@ -1,5 +1,5 @@
 open terminal
-ackettracer
+packettracer
 pc0
 ipv4: 192.168.1.2
 gw: 192.168.1.1
