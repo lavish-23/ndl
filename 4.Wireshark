@@ -12,5 +12,5 @@ arp
 udp
 http.request
 ip.dst == 224.0.0.251
-ip.addr == 192.168.1.10 (run ifconfig on pc)
+ip.addr == 192.168.1.10 (run ifconfig on pc and then paste the addr)
 tcp.flags.syn == 1 || tcp.flags.ack == 1
